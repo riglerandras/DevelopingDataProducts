@@ -1,0 +1,17 @@
+{
+    "contents" : "shinyUI(\n    pageWithSidebar(\n        # Application title\n        headerPanel(\"MPG prediction based on car weight\"),\n        \n        sidebarPanel(\n            h4('User inputs'),\n            radioButtons('transmission','Type of transmission \\n (used to filter data)',\n                         choices=c(\"All\"=2, \"Automatic\"=0, \"Manual\"=1)),\n            sliderInput('weight', 'Car Weight (1000 lb)', \n                        value=3.5, min = 1, max = 6, step = .1)\n        ),\n        mainPanel(\n            h3('Description'),\n            p('This app uses the `mtcars` dataset to predict MPG (miles per \n              gallon) value based on\n              the weight of a car. The app will filter the dataset according to\n              user input, fit a linear model on the filtered dataset, and \n              calculate the expected value of MPG for the car weight specified by the \n              user. The filtered dataset and the expected MPG value will be\n              plotted with the regression line overlaid.'),\n            h3('User specified inputs'),\n            p('Car weight:'),\n            verbatimTextOutput('inputWT'),\n            p('Filter by transmission type'),\n            verbatimTextOutput('inputFilt'),\n            h3('Prediction results'),\n            plotOutput('newPlot')\n            \n        )\n    )\n)",
+    "created" : 1446845858096.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3638856317",
+    "id" : "A17B046D",
+    "lastKnownWriteTime" : 1446844815,
+    "path" : "C:/temp/ra/_doku/coursera/DataProducts/DataproductsCourseProject/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

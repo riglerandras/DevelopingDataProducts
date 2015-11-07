@@ -1,0 +1,17 @@
+{
+    "contents" : "\ndata(mtcars)\n\nshinyServer(\n    function(input, output) {\n        output$inputWT <- renderPrint({input$weight})\n        transText <- c(\"Automatic\", \"Manual\", \"All\")\n        output$inputFilt <- renderPrint({transText[(1+as.numeric(input$transmission))]})\n        output$newPlot <- renderPlot({\n            d <- mtcars\n            if(input$transmission != 2){\n                d <- mtcars[d$am == input$transmission,]\n            }                \n            fit <- lm(mpg~wt, data=d)\n            predVal <- predict(fit, newdata=data.frame(wt=input$weight))\n            plot(d$wt, d$mpg, col=\"steelblue\", pch=19, cex=.9,\n                 main = paste0(\"Prediction of MPG based on car weight\\n\",\n                               \"Filter by transmission: \", transText[(1+as.numeric(input$transmission))]),\n                 cex.main=.9,xlim = c(1,6), ylim = c(5,35),\n                 xlab=\"User Specified Car Weight\", \n                 ylab = \"Predicted MPG\", cex.axis=.9, cex.lab=.9)\n            abline(fit, col=\"darkred\")\n            abline(v=input$weight, col=\"gray\")\n            abline(h=predVal, col=\"gray\")\n            points(input$weight, predVal, pch=20, cex=3, col=\"darkred\")\n            text(6,30,pos=2,labels=paste(\"Weight:\", input$weight), cex=.8)\n            text(6,26,pos=2,labels=paste(\"MPG:\", round(predVal, 1)), cex=.8)    \n        })\n    }\n)",
+    "created" : 1446845027074.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1074582398",
+    "id" : "EA6CE968",
+    "lastKnownWriteTime" : 1446834092,
+    "path" : "C:/temp/ra/_doku/coursera/DataProducts/courseProject/server.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

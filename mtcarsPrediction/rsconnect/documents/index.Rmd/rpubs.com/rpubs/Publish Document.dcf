@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+bundleId:
+        https://api.rpubs.com/api/v1/document/124196/4447bff86a9d4a3897fbf4cbfcd1d540
+url: http://rpubs.com/randras/124196
+when: 1446900167.82381
