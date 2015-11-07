@@ -1,8 +1,8 @@
 name: DataproductsCourseProject
 account: riglerandras
 server: shinyapps.io
-bundleId: 305846
+bundleId: 306037
 url: https://riglerandras.shinyapps.io/DataproductsCourseProject
-when: 1446845960.08177
+when: 1446904959.9679
 asMultiple: FALSE
 asStatic: FALSE
